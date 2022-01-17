@@ -6,17 +6,17 @@ import { Link } from 'react-router-dom'
 
 function Dashboard() {
     const [urlList, setUrlList] = useState([])
-    // useEffect(async () => {
-    //     try {
-    //         let dashboard = await axios.get("https://url-shortner-backend--node.herokuapp.com/dashboard", {
-    //             headers: {
-    //                 Authorization: window.localStorage.getItem("my_token")
-    //             }
-    //         });
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    // }, [])
+    useEffect(async () => {
+        try {
+            let dashboard = await axios.get("https://url-shortner-backend--node.herokuapp.com/dashboard", {
+                headers: {
+                    Authorization: window.localStorage.getItem("my_token")
+                }
+            });
+        } catch (error) {
+            console.log(error)
+        }
+    }, [])
 
     useEffect(() => {
         fetchUrls()

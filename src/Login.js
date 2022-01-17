@@ -16,7 +16,7 @@ function Login() {
     onSubmit: async values => {
       try {
         let loginData = await axios.post("https://url-shortner-backend--node.herokuapp.com/login", values)
-        window.localStorage.setItem("my_token", loginData.data.token)
+        // window.localStorage.setItem("my_token", loginData.data.token)
         navigate("/dashboard")
       } catch (error) {
         console.log(error)

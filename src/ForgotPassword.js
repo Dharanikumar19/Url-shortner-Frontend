@@ -9,9 +9,7 @@ function ForgotPassword() {
         },
         onSubmit: async values => {
           try {
-            // let loginData = await axios.post("http://localhost:3000y/login", values)
-            // window.localStorage.setItem("my_token", loginData.data.token)
-            // navigate("/dashboard")
+       
           } catch (error) {
             console.log(error)
           }
