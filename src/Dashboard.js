@@ -8,7 +8,7 @@ function Dashboard() {
     const [urlList, setUrlList] = useState([])
     useEffect(async () => {
         try {
-            let dashboard = await axios.get("http://localhost:3000/dashboard", {
+            let dashboard = await axios.get("https://url-shortner-backend--node.herokuapp.com/dashboard", {
                 headers: {
                     Authorization: window.localStorage.getItem("my_token")
                 }
@@ -25,7 +25,7 @@ function Dashboard() {
 
     let fetchUrls = async () => {
         try {
-            let allUrls = await axios.get("http://localhost:3000/getUrls")
+            let allUrls = await axios.get("https://url-shortner-backend--node.herokuapp.com/getUrls")
             setUrlList(allUrls.data)
         } catch (error) {
             console.log(error)
@@ -36,7 +36,7 @@ function Dashboard() {
         try {
             let result = window.confirm("Are you sure want to delete?")
             if (result) {
-                await axios.delete(`http://localhost:3000/url/${id}`)
+                await axios.delete(`https://url-shortner-backend--node.herokuapp.com/url/${id}`)
                 fetchUrls();
             }
         } catch (error) {
@@ -51,7 +51,7 @@ function Dashboard() {
         },
         onSubmit: async (values) => {
             try {
-                axios.post("http://localhost:3000/create-url", values)
+                axios.post("https://url-shortner-backend--node.herokuapp.com/create-url", values)
                 window.location.reload();
             } catch (error) {
                 console.log(error)

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useFormik } from 'formik';
 import axios from "axios"
 import {useNavigate} from "react-router-dom";
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 
 function Register() {
   const [passwordShown, setPasswordShown] = useState(false);
@@ -17,7 +17,7 @@ function Register() {
     },
     onSubmit:async (values) => {
        try {
-        axios.post("http://localhost:3000/register",values)
+        axios.post("https://url-shortner-backend--node.herokuapp.com/register",values)
         navigate("/")
        } catch (error) {
            console.log(error)

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useFormik } from 'formik';
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 
 function Login() {
   const [passwordShown, setPasswordShown] = useState(false);
@@ -15,7 +15,7 @@ function Login() {
     },
     onSubmit: async values => {
       try {
-        let loginData = await axios.post("http://localhost:3000/login", values)
+        let loginData = await axios.post("https://url-shortner-backend--node.herokuapp.com/login", values)
         window.localStorage.setItem("my_token", loginData.data.token)
         navigate("/dashboard")
       } catch (error) {
