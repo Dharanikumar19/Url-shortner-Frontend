@@ -10,7 +10,7 @@ function Dashboard() {
         try {
             let dashboard = await axios.get("https://url-shortner-backend--node.herokuapp.com/dashboard", {
                 headers: {
-                    Authorization: window.localStorage.getItem("my_token")
+                    Authorization: window.localStorage.setItem("my_token")
                 }
             });
         } catch (error) {
