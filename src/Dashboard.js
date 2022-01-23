@@ -53,7 +53,7 @@ function Dashboard() {
         onSubmit: async (values) => {
             try {
                 axios.post("https://url-shortner-backend--node.herokuapp.com/create-url", values)
-                window.location.reload();
+                fetchUrls();
             } catch (error) {
                 console.log(error)
             }
