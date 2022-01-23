@@ -17,7 +17,7 @@ function Register() {
     },
     onSubmit:async (values) => {
        try {
-        axios.post("https://url-shortner-backend--node.herokuapp.com/register",values)
+        await axios.post("https://url-shortner-backend--node.herokuapp.com/register",values)
         navigate("/")
        } catch (error) {
            console.log(error)
